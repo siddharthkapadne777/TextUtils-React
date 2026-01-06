@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:white;
+}
+
+.navbar{
+    background-color:white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.nav-title{
+    font-size: 18px;
+    font-weight: 600;
+    color: violet;
+}
+
+.nav-ul{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-li{
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 5px;
+    border-radius: 10px 10px 24px 24px;
+    transition: all 0.3s ease;
+}
+
+.nav-li:hover{
+    color: violet;
+}
+
+.nav-li::after{
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: violet;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.nav-li:hover::after{
+    width: 100%;
+}
+
+.nav-li a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.container{
+    width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.btn{
+    padding: 10px 20px;
+    background-color: violet;
+    color: white;
+    width: fit-content;
+    border-radius: 5px;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.button-container{
+    display: flex;
+}
+
+
+.mode{
+    background-color: paleturquoise;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    /* color: white; */
+    font-weight: bolder;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+.about-container{
+    margin-top: 80px;
+}
+
+
+.checkbox-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bolder;
+    justify-content: space-between;
+    width: 80px;
+}
+
+#mode-checkbox{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 100px;
+    display: block;
+    appearance: none;
+    background-color: white;
+    border: 2px solid #121212;
+}
+#mode-checkbox:checked{
+    background-color: #121212;
+    border: 2px solid white;
+}
+
+.dark-mode{
+    background-color: #121212;
+    color: white;
+}
+
+.light-mode{
+    background-color: white;
+    color: #121212;
+}
+
+.alert{
+    height: 40px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 18px;
+    color: green;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    background-color: aliceblue;
+}
