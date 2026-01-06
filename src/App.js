@@ -1,24 +1,63 @@
-import logo from './logo.svg';
 import './App.css';
+import About from './components/About';
+import NavBar from './components/NavBar';
+import Alert from './components/Alert';
+import TextForm from './components/TextForm';
+import React, { useState } from 'react'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
+  const [mode, setMode] = useState(false)
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (message) => {
+    setAlert(message);
+    setTimeout(() => {
+      setAlert(null);
+    }, 1500);
+  }
+
+  const toggleMode = () => {
+    setMode(!mode);
+    const body = document.body;
+    if (!mode) {
+      body.style.color = "white";
+      body.style.backgroundColor = "#121212";
+      showAlert("Dark mode has been enabled!");
+      document.title = "TextUtils - Dark Mode";
+    }
+    else {
+      body.style.color = "#121212";
+      body.style.backgroundColor = "white";
+      showAlert("Light mode has been enabled!");
+      document.title = "TextUtils - Light Mode";
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <NavBar
+          title="My Application"
+          firstLink="Home"
+          secondLink="About"
+          mode={mode}
+          toggleMode={toggleMode} />
+        <Alert
+          alert={alert} />
+        <Routes>
+          <Route exact path='/' element={<TextForm
+            heading="Enter the text"
+            mode={mode}
+            showAlert={showAlert} />} />
+          <Route exact path='/about' element={<About mode={mode} />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
