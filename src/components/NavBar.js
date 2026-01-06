@@ -7,8 +7,8 @@ export default function NavBar(props) {
     <nav className={`navbar ${props.mode ? 'dark-mode' : 'light-mode'}`}>
       <h1 className='nav-title'>{props.title}</h1>
       <ul className='nav-ul'>
-        <li className='nav-li'><Link to='/TextUtils-React/'>{props.firstLink}</Link></li>
-        <li className='nav-li'><Link to='/TextUtils-React/about'>{props.secondLink}</Link></li>
+        <li className='nav-li'><Link to='/'>{props.firstLink}</Link></li>
+        <li className='nav-li'><Link to='/about'>{props.secondLink}</Link></li>
         {/* <li className='nav-li'><a href='/'>{props.thirdLink}</a></li>
         <li className='nav-li'><a href='/'>{props.fourthLink}</a></li> */}
       </ul>

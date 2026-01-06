@@ -50,11 +50,11 @@ function App() {
         <Alert
           alert={alert} />
         <Routes>
-          <Route exact path='/TextUtils-React/' element={<TextForm
+          <Route exact path='/' element={<TextForm
             heading="Enter the text"
             mode={mode}
             showAlert={showAlert} />} />
-          <Route exact path='/TextUtils-React/about' element={<About mode={mode} />} />
+          <Route exact path='/about' element={<About mode={mode} />} />
         </Routes>
       </Router>
     </>
