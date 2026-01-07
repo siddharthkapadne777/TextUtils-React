@@ -85,6 +85,11 @@ body{
     cursor: pointer;
 }
 
+.btn:disabled{
+    background-color: grey;
+    cursor: not-allowed;
+}
+
 .button-container{
     display: flex;
 }
